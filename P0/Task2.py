@@ -19,4 +19,11 @@ Print a message:
 "<telephone number> spent the longest time, <total time> seconds, on the phone during 
 September 2016.".
 """
+duration_Max= 0
+for ph1, ph2, time, duration in calls:
+    if duration_Max > int(duration):
+        ph1_Max = ph1
+    else:
+        duration_Max = int(duration)
 
+print(ph1_Max, 'spent the longest time,', duration_Max, "seconds, on the phone during September 2016.")        

@@ -41,5 +41,3 @@ for ph1, ph2, time, duration in calls:
         count+=1        
 
 print('There are', count, ' different telephone numbers in the records')
-
-print(len(texts)+len(calls))

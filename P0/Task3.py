@@ -43,3 +43,53 @@ Print the answer as a part of a message::
 to other fixed lines in Bangalore."
 The percentage should have 2 decimal digits
 """
+
+"""
+My steps
+1. Find numbers starts with (080)
+2. parse area codes
+3. parse mobile prefixs
+
+"""
+# Part A
+s = '(080)'
+codes = []
+count = 0
+
+# Add area codes in array
+for ph1, ph2, time, duration in calls:
+  if s in ph1:
+    if ph2.startswith('('):
+      index = ph2.find(')')+1
+      codes.append(ph2[0:index])
+
+    elif ph2.startswith('140'):
+        codes.append('140')
+
+    else:
+         index = ph2.find(' ') 
+         codes.append(ph2[0:index])
+
+# sort codes
+codes.sort()
+
+# print out one per line in lexicographic order with no duplicates
+print("The numbers called by people in Bangalore have codes:")
+# Find unique codes in array
+unique_codes = []
+num_calls_in_Banglore = 0
+for code in codes:
+  if code not in unique_codes:
+    unique_codes.append(code)
+    print(code, '\n')
+  if code == s:
+    num_calls_in_Banglore+=1
+    
+# Part B: What percentage of calls from fixed lines in Bangalore are made
+# to fixed lines also in Bangalore?
+# print('Total number of calls from Banglore', len(codes))
+# print('Total number of calls within Banglore', num_calls_in_Banglore)
+percent_calls_within_Banglore = (num_calls_in_Banglore*100)/len(codes)
+print(format(percent_calls_within_Banglore, '.2f'), "percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.")
+
+
