@@ -31,7 +31,6 @@ S = set()
 Outgoing_calls = []
 
 for ph1, ph2, time, duration in calls:
-    Outgoing_calls.append(ph1)
     Sph1.add(ph1)
     S.add(ph2)
 
@@ -43,12 +42,9 @@ for ph1, ph2, time in texts:
 Tele_Marketers = Sph1-S
 # Convert set to list
 Tele_Marketers = list(Tele_Marketers)
-# sort set
-Tele_Marketers.sort()
 
-# Print a message:
+# # Print a message:
+
 print("These numbers could be telemarketers: ")
-for ph in  Tele_Marketers:
-    print(ph, '\n')    
-
-
+for ph in  sorted(Tele_Marketers):
+    print(ph)
