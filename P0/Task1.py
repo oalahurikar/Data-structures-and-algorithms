@@ -23,7 +23,7 @@ Print a message:
 
 
 dic = {}
-count = 1
+count = 0
 for ph1, ph2, time in texts:
     if ph1 not in dic:
         dic[ph1] = count

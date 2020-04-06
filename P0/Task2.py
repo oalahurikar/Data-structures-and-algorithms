@@ -20,10 +20,17 @@ Print a message:
 September 2016.".
 """
 duration_Max= 0
+dic = {}
 for ph1, ph2, time, duration in calls:
-    if duration_Max > int(duration):
-        ph1_Max = ph1
-    else:
-        duration_Max = int(duration)
+    if ph1 in dic:
+        dic[ph1]+=duration
+    elif ph1 not in dic:
+        dic[ph1] = duration
 
+    if ph2 in dic:
+        dic[ph2]+=duration    
+    elif ph2 not in dic:
+        dic[ph2] = duration    
+ph1_Max= max(dic)
+duration_Max = dic[max(dic)]
 print(ph1_Max, 'spent the longest time,', duration_Max, "seconds, on the phone during September 2016.")        

@@ -68,7 +68,7 @@ for ph1, ph2, time, duration in calls:
 
     else:
          index = ph2.find(' ') 
-         codes.append(ph2[0:index])
+         codes.append(ph2[0:index-1])
 
 # sort codes
 codes.sort()
@@ -87,8 +87,6 @@ for code in codes:
     
 # Part B: What percentage of calls from fixed lines in Bangalore are made
 # to fixed lines also in Bangalore?
-# print('Total number of calls from Banglore', len(codes))
-# print('Total number of calls within Banglore', num_calls_in_Banglore)
 percent_calls_within_Banglore = (num_calls_in_Banglore*100)/len(codes)
 print(format(percent_calls_within_Banglore, '.2f'), "percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.")
 
