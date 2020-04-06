@@ -21,7 +21,8 @@ To get codes from calls list, one for loop is used which iterate over len(calls)
 This loop goes through maximum 4 instructions in worst case.
 
 
-`for ph1, ph2, time, duration in calls:
+```
+for ph1, ph2, time, duration in calls:
   if s in ph1:
     if ph2.startswith('('):
       index = ph2.find(')')+1
@@ -32,7 +33,8 @@ This loop goes through maximum 4 instructions in worst case.
 
     else:
          index = ph2.find(' ') 
-         codes.append(ph2[0:index-1])`
+         codes.append(ph2[0:index-1])
+```
 
 But later in code used sort() to get codes in lexicographic order. Whose time complexity is.
 Worst-Case Big-O = O(nlogn)
