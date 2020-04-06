@@ -21,8 +21,7 @@ To get codes from calls list, one for loop is used which iterate over len(calls)
 This loop goes through maximum 4 instructions in worst case.
 
 
-`# Add area codes in array
-for ph1, ph2, time, duration in calls:
+`for ph1, ph2, time, duration in calls:
   if s in ph1:
     if ph2.startswith('('):
       index = ph2.find(')')+1
