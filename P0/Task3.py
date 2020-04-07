@@ -80,7 +80,7 @@ unique_codes = []
 num_calls_in_Banglore = 0
 for code in codes:
   if code not in unique_codes:
-    # unique_codes.append(code)
+    unique_codes.append(code)
     print(code, '\n')
   if code == s:
     num_calls_in_Banglore+=1
